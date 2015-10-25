@@ -7,5 +7,10 @@
   %body
     / %p.notice= notice
     / %p.alert= alert
-    = yield
-
+    - if user_signed_in?
+      #wrapper
+        = render 'layouts/dashboard'
+        #page-content-wrapper
+          = yield
+    - else
+      = yield

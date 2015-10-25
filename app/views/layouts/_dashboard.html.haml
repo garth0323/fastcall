@@ -1,0 +1,7 @@
+#sidebar-wrapper
+  %ul.sidebar-nav
+    %li.sidebar-brand
+      %a{:href => "#"}
+        = current_user.email
+    - current_user_businesses.each do |bus|
+      %li= bus.name
