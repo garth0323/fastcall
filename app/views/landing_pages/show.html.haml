@@ -1,0 +1,18 @@
+.page-header
+  %h1
+    Example page header
+    %small Subtext for header
+.panel.panel-default
+  / Default panel contents
+  .panel-heading
+    = @landing_page.name
+    = link_to 'Edit', edit_landing_page_path(@landing_page), class: "pull-right"
+  .panel-body
+    %p= @landing_page.url
+  %table.table
+    %tr
+      %th Date
+      %th Form
+    %tr
+      %td January
+      %td $100

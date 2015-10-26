@@ -1,0 +1,5 @@
+= simple_form_for(@landing_page, html: {class: 'form-horizontal' }) do |f|
+  = f.input :url, placeholder: 'copy and paste entire url here'
+  = f.input :name
+  = f.input :business_id, collection: current_user_businesses
+  = f.button :submit, class: 'btn btn-primary btn-submit' 

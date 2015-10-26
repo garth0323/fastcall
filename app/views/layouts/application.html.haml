@@ -11,6 +11,7 @@
       #wrapper
         = render 'layouts/dashboard'
         #page-content-wrapper
+          %a#menu-toggle.btn.btn-default{:href => "#menu-toggle"} Toggle Menu
           = yield
     - else
       = yield

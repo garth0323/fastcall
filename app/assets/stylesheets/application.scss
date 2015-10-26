@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "businesses";
+@import "landing_pages";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -15,7 +16,6 @@
  * file per style scope.
  *
  *= require devise_bootstrap_views
- *= require businesses
  *= require_tree .
  *= require_self
  */

@@ -1,11 +1,8 @@
 class LandingPagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_landing_page, only: [:show, :edit, :update, :destroy]
 
-  # GET /landing_pages
-  # GET /landing_pages.json
-  def index
-    @landing_pages = LandingPage.all
-  end
+  
 
   # GET /landing_pages/1
   # GET /landing_pages/1.json
@@ -69,6 +66,6 @@ class LandingPagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def landing_page_params
-      params.require(:landing_page).permit(:url, :name)
+      params.require(:landing_page).permit(:url, :name, :business_id)
     end
 end

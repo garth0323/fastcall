@@ -1,7 +1,25 @@
 #sidebar-wrapper
   %ul.sidebar-nav
     %li.sidebar-brand
-      %a{:href => "#"}
-        = current_user.email
+      FastCall
+    %li= current_user.email
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        New
+        %b.caret
+      %ul.dropdown-menu
+        %li= link_to "landing page", new_landing_page_path
+        %li= link_to "business", new_business_path
     - current_user_businesses.each do |bus|
-      %li= bus.name
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          = bus.name
+          %b.caret
+        %ul.dropdown-menu
+          - bus.landing_pages.each do |page|
+            %li
+              = link_to page.name, landing_page_path(page)
+    
+
+              
+            
