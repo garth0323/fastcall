@@ -81,11 +81,11 @@
     line-height: 60px;
 }
 
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
+.sidebar-nav > .sidebar-brand {
+    color: white;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
+.sidebar-nav > .sidebar-brand :hover {
     color: #fff;
     background: none;
 }

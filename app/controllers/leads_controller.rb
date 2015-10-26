@@ -1,15 +1,12 @@
 class LeadsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :create
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
 
-  # GET /leads
-  # GET /leads.json
+  
   def index
     @leads = Lead.all
   end
 
-  # GET /leads/1
-  # GET /leads/1.json
   def show
   end
 
@@ -25,16 +22,14 @@ class LeadsController < ApplicationController
   # POST /leads
   # POST /leads.json
   def create
+    byebug
     @lead = Lead.new(lead_params)
 
-    respond_to do |format|
-      if @lead.save
-        format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
-        format.json { render :show, status: :created, location: @lead }
-      else
-        format.html { render :new }
-        format.json { render json: @lead.errors, status: :unprocessable_entity }
-      end
+    if @lead.save
+      render :none
+    else
+      format.html { render :new }
+      format.json { render json: @lead.errors, status: :unprocessable_entity }
     end
   end
 
@@ -70,6 +65,6 @@ class LeadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lead_params
-      params.require(:lead).permit(:params, :url)
+      params.require(:lead).permit(:fields, :url, :landing_page_id)
     end
 end

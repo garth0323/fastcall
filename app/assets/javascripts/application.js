@@ -16,24 +16,3 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-// $( document ).ready(function() {
-//   $( "form" ).submit(function( event ) {
-//     var url = window.location.href
-//     var dataArray = $( this ).serializeArray(),
-//     dataObj = {};
-
-//     $(dataArray).each(function(i, field){
-//       dataObj[field.name] = field.value;
-//     });
-
-//     $.ajax({
-//       method: "POST"
-//       url: "/leads",
-//       data: {form: dataObj, url: url }
-    
-//     console.log( dataObj );
-//     console.log( url );
-//     event.preventDefault();
-//   });
-// });

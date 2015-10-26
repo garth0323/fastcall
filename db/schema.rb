@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20151024173729) do
   end
 
   create_table "leads", force: :cascade do |t|
-    t.text     "params"
+    t.text     "fields"
     t.string   "url"
     t.integer  "landing_page_id"
     t.datetime "created_at",      null: false
