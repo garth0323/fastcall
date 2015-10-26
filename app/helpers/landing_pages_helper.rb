@@ -4,6 +4,7 @@ module LandingPagesHelper
     script = "<script>
     $( document ).ready(function() {
       $( 'form' ).submit(function( event ) {
+        console.log( $( this ).serializeArray() );
         var dataArray = $( this ).serializeArray(),
         dataObj = {};
         $(dataArray).each(function(i, field){
@@ -12,7 +13,7 @@ module LandingPagesHelper
         $.ajax({
           method: 'POST',
           url: 'http://localhost:3000/leads',
-          data: {lead: { fields: dataObj, url: window.location.href, landing_page_id: #{page.id} } }
+          data: {lead: { fields: dataObj, url: window.location.href, landing_page_id: #{page.id}} }
         });
         event.preventDefault();
       });
