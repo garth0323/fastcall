@@ -1,7 +1,6 @@
 .page-header
   %h1
     Landing Pages
-    %small Subtext for header
 .panel.panel-default
   / Default panel contents
   .panel-heading
@@ -12,10 +11,11 @@
     %p= @landing_page.url
   %table.table
     %tr
-      %th Date
+      %th Lead Date/Time
       %th Form
     %tr
-      %td January
+    - @landing_page.leads.each do |lead|
+      %td= lead.created_at.strftime("%b %d, %Y, %r") 
       %td $100
 
 = render 'script'

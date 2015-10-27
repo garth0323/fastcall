@@ -22,7 +22,6 @@ class LeadsController < ApplicationController
   # POST /leads
   # POST /leads.json
   def create
-    byebug
     @lead = Lead.new(lead_params)
 
     if @lead.save

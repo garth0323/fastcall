@@ -4,6 +4,8 @@ class CreateLandingPages < ActiveRecord::Migration
       t.string :url
       t.string :name
       t.integer :business_id
+      t.text :call_script
+      t.text :message_script
 
       t.timestamps null: false
     end
